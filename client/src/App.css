@@ -1,0 +1,71 @@
+footer {
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  bottom: 0;
+}
+
+#users-container {
+  padding: 20px;
+}
+
+#load-container {
+  margin-top: 30px;
+}
+
+#load-information {
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #ffffff;
+}
+#load-button {
+  font-size: 1.5rem;
+}
+
+#load-status {
+  margin-top: 20px;
+}
+
+.form-title {
+  margin-bottom: 16px;
+}
+
+.user-cards {
+  max-width: 800px;
+  max-height: 500px;
+  overflow-y: auto;
+  margin: 0 auto;
+  scroll-behavior: smooth;
+}
+
+.user-card {
+  padding: 1rem;
+}
+
+.user-card-button {
+  min-width: 150px;
+  margin-top: 1rem;
+  border-radius: 50px;
+}
+
+.chat-tabs {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+}
+
+.chat-tabs .user-card:hover {
+  cursor: pointer;
+  background-color: #ffffff75 !important;
+}
+
+.chat-tabs .user-card.selected {
+  background-color: #007bff !important;
+}
+
+.user-chats,
+.selected-chat {
+  max-height: 800px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
