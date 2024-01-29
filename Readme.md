@@ -25,8 +25,7 @@ You can import chatAppCollection file in your Postman application for testing th
 - Docker and Docker compose installed
 
 ### Run the app using the following commands
-
-1. Clone the repository:
+Clone the repository, build the docker files and navigate to  http://localhost:3000 :
    ```bash
    git clone git@github.com:NikolaosZer/chat_app.git
    cd chat_app
