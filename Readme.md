@@ -16,8 +16,7 @@ Chat App is a test application that allows users to search by criteria and provi
 
 ## Postman Configuration
 
-
-You can import this file in your Postman app for testing the endpoints.
+You can import chatAppCollection file in your Postman application for testing the endpoints.
 
 ## Getting Started
 
