@@ -11,13 +11,13 @@ Chat App is a test application that allows users to search by criteria and provi
 
 ## Database Tables
 
-![Database Tables](path/to/your/database_tables_image.png)
-_Describe your database tables and relationships here._
+![image](https://github.com/NikolaosZer/chat_app/assets/91803479/2b78f4bf-da08-40dc-b6ba-005496576bf4)
+
 
 ## Postman Configuration
 
-- [Download Postman Configuration File](path/to/your/postman_configuration_file.json)
-  _Include any additional details or instructions related to your Postman configuration file._
+
+You can import this file in your Postman app for testing the endpoints.
 
 ## Getting Started
 
