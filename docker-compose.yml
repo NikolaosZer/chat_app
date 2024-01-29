@@ -5,12 +5,18 @@ services:
     restart: always
     build: .
     ports:
-      - "3000:3000"
+      - '3000:3000'
     depends_on:
       - postgres_db
     volumes:
-    - .:/usr/src/app
-    - /usr/src/app/node_modules
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    environment:
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
 
   postgres_db:
     container_name: postgres_db
@@ -24,5 +30,5 @@ services:
       - POSTGRES_PASSWORD=${DB_PASSWORD}
       - POSTGRES_DB=${DB_NAME}
 
-volumes: 
- data: {}
+volumes:
+  data: {}

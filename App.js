@@ -1,8 +1,14 @@
 // Imports
 const express = require('express');
 const morgan = require('morgan');
+const path = require('path');
+const { sequelize } = require('./db');
 const bodyParser = require('body-parser');
 const app = express();
+const userRoutes = require('./routes/userRoutes');
+const messageRoutes = require('./routes/messageRoutes');
+const initRoutes = require('./routes/initRoutes');
+
 
 app.use(morgan('dev', {
 	skip: function (req, res) { return res.statusCode > 400 }
@@ -10,6 +16,7 @@ app.use(morgan('dev', {
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, 'client', 'dist')))
 
 app.use((req, res, next) => {
 	// Set response headers
@@ -24,6 +31,11 @@ app.use((req, res, next) => {
 	next(); // Go to next middleware
 });
 
+app.get('/', (req, res) => {
+	res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
+});
+app.use('/api/v1', initRoutes, userRoutes, messageRoutes);
+
 app.use((req, res, next) => {
 	const error = new Error('No route was found for this request!');
 	error.status = 404;
@@ -37,6 +49,10 @@ app.use((error, req, res, next) => {
 			message: error.message
 		}
 	})
+});
+
+sequelize.sync({ force: true }).then(() => {
+	console.log('Database synced successfully');
 });
 
 module.exports = app;
